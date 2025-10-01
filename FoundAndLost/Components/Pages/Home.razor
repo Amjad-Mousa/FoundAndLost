@@ -9,7 +9,7 @@
         <div class="hero-overlay">
             <div class="hero-content">
                 <h1 class="hero-title">Lost & Found</h1>
-                <p class="hero-subtitle">منصة مجانية لمساعدة الناس في العثور على أغراضهم المفقودة</p>
+                <p class="hero-subtitle">منصة مجانية تساعدك على الإبلاغ أو العثور على الأغراض المفقودة بسهولة وسرعة</p>
             </div>
         </div>
     </section>
@@ -18,8 +18,8 @@
     <section class="recent-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">آخر البلاغات</h2>
-                <p class="section-subtitle">أحدث الإعلانات عن الأغراض المفقودة والمجدودة</p>
+                <h2 class="section-title">🆕 آخر البلاغات</h2>
+                <p class="section-subtitle">تصفح أحدث الإعلانات عن الأغراض المفقودة والموجودة</p>
             </div>
 
             <!-- أزرار التصفية -->
@@ -43,10 +43,6 @@
                 @foreach (var item in filteredItems)
                 {
                     <div class="item-card" @onclick="() => ViewItemDetails(item.Id)">
-                        <div class="card-header">
-                            <span class="item-type @item.Type">@item.TypeText</span>
-                            <span class="item-status @item.Status">@item.StatusText</span>
-                        </div>
                         <div class="card-image">
                             <img src="@item.ImageUrl" alt="@item.Title" />
                         </div>
@@ -67,6 +63,10 @@
                                 </span>
                             </div>
                             <p class="item-description">@item.Description</p>
+                            <div class="item-tags">
+                                <span class="item-type @item.Type">@item.TypeText</span>
+                                <span class="item-status @item.Status">@item.StatusText</span>
+                            </div>
                         </div>
                     </div>
                 }
@@ -74,7 +74,7 @@
 
             <!-- زر عرض المزيد -->
             <div class="view-more">
-                <button class="btn btn-outline" @onclick="NavigateToSearch">
+                <button class="btn" @onclick="NavigateToSearch">
                     عرض جميع البلاغات
                     <i class="fas fa-arrow-left"></i>
                 </button>
@@ -138,54 +138,10 @@
     {
         allItems = new List<ItemModel>
         {
-            new ItemModel
-            {
-                Id = 1,
-                Type = "lost",
-                Title = "محفظة سوداء",
-                Description = "محفظة جلدية سوداء تحتوي على بطاقات شخصية",
-                Category = "محفظة",
-                Location = "مركز المدينة",
-                Date = "2024-01-15",
-                Status = "active",
-                ImageUrl = "/images/placeholder.jpg"
-            },
-            new ItemModel
-            {
-                Id = 2,
-                Type = "found",
-                Title = "هاتف آيفون",
-                Description = "هاتف آيفون أسود في حافظة حمراء",
-                Category = "هاتف",
-                Location = "المجمع التجاري",
-                Date = "2024-01-14",
-                Status = "active",
-                ImageUrl = "/images/placeholder.jpg"
-            },
-            new ItemModel
-            {
-                Id = 3,
-                Type = "lost",
-                Title = "مفاتيح سيارة",
-                Description = "حزمة مفاتيح تحتوي على 5 مفاتيح",
-                Category = "مفاتيح",
-                Location = "موقف السيارات",
-                Date = "2024-01-13",
-                Status = "resolved",
-                ImageUrl = "/images/placeholder.jpg"
-            },
-            new ItemModel
-            {
-                Id = 4,
-                Type = "found",
-                Title = "سماعات أذن",
-                Description = "سماعات لاسلكية بيضاء",
-                Category = "إلكترونيات",
-                Location = "المكتبة",
-                Date = "2024-01-12",
-                Status = "active",
-                ImageUrl = "/images/placeholder.jpg"
-            }
+            new ItemModel { Id = 1, Type = "lost", Title = "محفظة سوداء", Description = "محفظة جلدية سوداء تحتوي على بطاقات شخصية", Category = "محفظة", Location = "مركز المدينة", Date = "2024-01-15", Status = "active", ImageUrl = "/images/placeholder.jpg" },
+            new ItemModel { Id = 2, Type = "found", Title = "هاتف آيفون", Description = "هاتف آيفون أسود في حافظة حمراء", Category = "هاتف", Location = "المجمع التجاري", Date = "2024-01-14", Status = "active", ImageUrl = "/images/placeholder.jpg" },
+            new ItemModel { Id = 3, Type = "lost", Title = "مفاتيح سيارة", Description = "حزمة مفاتيح تحتوي على 5 مفاتيح", Category = "مفاتيح", Location = "موقف السيارات", Date = "2024-01-13", Status = "resolved", ImageUrl = "/images/placeholder.jpg" },
+            new ItemModel { Id = 4, Type = "found", Title = "سماعات أذن", Description = "سماعات لاسلكية بيضاء", Category = "إلكترونيات", Location = "المكتبة", Date = "2024-01-12", Status = "active", ImageUrl = "/images/placeholder.jpg" }
         };
     }
 
@@ -193,18 +149,12 @@
     {
         currentFilter = filter;
 
-        if (filter == "all")
+        filteredItems = filter switch
         {
-            filteredItems = allItems;
-        }
-        else if (filter == "lost")
-        {
-            filteredItems = allItems.Where(item => item.Type == "lost").ToList();
-        }
-        else if (filter == "found")
-        {
-            filteredItems = allItems.Where(item => item.Type == "found").ToList();
-        }
+            "lost" => allItems.Where(item => item.Type == "lost").ToList(),
+            "found" => allItems.Where(item => item.Type == "found").ToList(),
+            _ => allItems
+        };
 
         StateHasChanged();
     }
@@ -225,7 +175,6 @@
         Navigation.NavigateTo($"/item/{itemId}");
     }
 
-    // نموذج البيانات
     private class ItemModel
     {
         public int Id { get; set; }
