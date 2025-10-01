@@ -1,0 +1,121 @@
+﻿@page "/register"
+@layout Layout.AuthLayout
+@inject NavigationManager Navigation
+
+<PageTitle>Lost & Found - إنشاء حساب</PageTitle>
+
+<div class="auth-page">
+    <div class="auth-container">
+        <!-- الشريط الجانبي -->
+        <div class="auth-sidebar">
+            <div class="sidebar-content">
+                <div class="logo">
+                    <i class="fas fa-search-location"></i>
+                    <h2>Lost & Found</h2>
+                </div>
+                <div class="sidebar-text">
+                    <h3>انضم إلينا!</h3>
+                    <p>أنشئ حسابك الجديد وابدأ في مساعدة الآخرين</p>
+                </div>
+                <div class="sidebar-features">
+                    <div class="feature">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>أضف بلاغات جديدة</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bell"></i>
+                        <span>تلقي إشعارات فورية</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>حساب آمن ومحمي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- نموذج التسجيل -->
+        <div class="auth-form">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>إنشاء حساب</h1>
+                    <p>املأ البيانات لإنشاء حساب جديد</p>
+                </div>
+
+                <div class="form-content">
+                    <!-- الاسم الكامل -->
+                    <div class="form-group">
+                        <label class="form-label">الاسم الكامل</label>
+                        <div class="input-group">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" class="form-input" placeholder="أحمد محمد" />
+                        </div>
+                    </div>
+
+                    <!-- البريد الإلكتروني -->
+                    <div class="form-group">
+                        <label class="form-label">البريد الإلكتروني</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" class="form-input" placeholder="example@email.com" />
+                        </div>
+                    </div>
+
+                    <!-- كلمة المرور -->
+                    <div class="form-group">
+                        <label class="form-label">كلمة المرور</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" class="form-input" placeholder="كلمة مرور قوية" />
+                        </div>
+                    </div>
+
+                    <!-- تأكيد كلمة المرور -->
+                    <div class="form-group">
+                        <label class="form-label">تأكيد كلمة المرور</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" class="form-input" placeholder="أعد إدخال كلمة المرور" />
+                        </div>
+                    </div>
+
+                    <!-- اتفاقية الاستخدام -->
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" />
+                            <span class="checkmark"></span>
+                            أوافق على <a href="/terms" class="terms-link">شروط الاستخدام</a>
+                        </label>
+                    </div>
+
+                    <!-- زر إنشاء الحساب -->
+                    <button class="btn btn-primary btn-auth">
+                        <i class="fas fa-user-plus"></i>
+                        إنشاء حساب
+                    </button>
+
+                    <!-- خط الفاصل -->
+                    <div class="divider">
+                        <span>أو</span>
+                    </div>
+
+                    <!-- لديك حساب بالفعل -->
+                    <div class="auth-switch">
+                        <p>هل لديك حساب بالفعل؟</p>
+                        <a href="/login" class="btn btn-link">
+                            <i class="fas fa-user-plus"></i>
+                            تسجيل الدخول
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private void NavigateToLogin()
+    {
+        Navigation.NavigateTo("/login");
+    }
+}

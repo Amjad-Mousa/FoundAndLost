@@ -1,0 +1,27 @@
+.app-layout[b-5hfzsgsfrx] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header[b-5hfzsgsfrx] {
+    flex-shrink: 0;
+}
+
+.main-content[b-5hfzsgsfrx] {
+    flex: 1;
+    background-color: #f8f9fa;
+}
+
+footer[b-5hfzsgsfrx] {
+    flex-shrink: 0;
+}
+
+body[b-5hfzsgsfrx] {
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}

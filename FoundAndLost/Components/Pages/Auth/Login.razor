@@ -1,0 +1,166 @@
+﻿@page "/login"
+@layout Layout.AuthLayout
+@inject NavigationManager Navigation
+
+<PageTitle>Lost & Found - تسجيل الدخول</PageTitle>
+
+<div class="auth-page">
+    <div class="auth-container">
+        <!-- الشريط الجانبي -->
+        <div class="auth-sidebar">
+            <div class="sidebar-content">
+                <div class="logo">
+                    <i class="fas fa-search-location"></i>
+                    <h2>Lost & Found</h2>
+                </div>
+                <div class="sidebar-text">
+                    <h3>مرحباً بعودتك!</h3>
+                    <p>سجل الدخول للوصول إلى حسابك ومتابعة بلاغاتك</p>
+                </div>
+                <div class="sidebar-features">
+                    <div class="feature">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>أضف بلاغات جديدة</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-list"></i>
+                        <span>إدارة بلاغاتك</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bell"></i>
+                        <span>تلقي الإشعارات</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- نموذج التسجيل -->
+        <div class="auth-form">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>تسجيل الدخول</h1>
+                    <p>أدخل بياناتك للوصول إلى حسابك</p>
+                </div>
+
+                <!-- نموذج التسجيل -->
+                <div class="form-content">
+                    <!-- البريد الإلكتروني -->
+                    <div class="form-group">
+                        <label class="form-label">البريد الإلكتروني</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email"
+                                   class="form-input"
+                                   placeholder="example@email.com"
+                                   @bind="loginModel.Email" />
+                        </div>
+                    </div>
+
+                    <!-- كلمة المرور -->
+                    <div class="form-group">
+                        <label class="form-label">كلمة المرور</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password"
+                                   class="form-input"
+                                   placeholder="أدخل كلمة المرور"
+                                   @bind="loginModel.Password" />
+                            <button type="button" class="password-toggle" @onclick="TogglePasswordVisibility">
+                                <i class="fas @passwordIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- تذكرني ونسيت كلمة المرور -->
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" @bind="loginModel.RememberMe" />
+                            <span class="checkmark"></span>
+                            تذكرني
+                        </label>
+                        <a class="forgot-password" @onclick="NavigateToForgotPassword">
+                            نسيت كلمة المرور؟
+                        </a>
+                    </div>
+
+                    <!-- زر التسجيل -->
+                    <button class="btn btn-primary btn-auth" @onclick="HandleLogin">
+                        <i class="fas fa-sign-in-alt"></i>
+                        تسجيل الدخول
+                    </button>
+
+                    <!-- تسجيل الدخول كزائر -->
+                    <div class="guest-login">
+                        <button class="btn btn-outline btn-guest" @onclick="ContinueAsGuest">
+                            <i class="fas fa-user"></i>
+                            متابعة كزائر
+                        </button>
+                        <p class="guest-note">يمكنك التصفح فقط بدون إضافة بلاغات</p>
+                    </div>
+
+                    <!-- خط الفاصل -->
+                    <div class="divider">
+                        <span>أو</span>
+                    </div>
+
+                    <!-- التسجيل الجديد -->
+                    <div class="auth-switch">
+                        <p>ليس لديك حساب؟</p>
+                        <a href="/register" class="btn btn-link">
+                            <i class="fas fa-user-plus"></i>
+                            إنشاء حساب جديد
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginModel loginModel = new();
+    private bool showPassword = false;
+    private string passwordIcon = "fa-eye";
+
+    private void TogglePasswordVisibility()
+    {
+        showPassword = !showPassword;
+        passwordIcon = showPassword ? "fa-eye-slash" : "fa-eye";
+    }
+
+    private async Task HandleLogin()
+    {
+        // محاكاة تسجيل الدخول
+        Console.WriteLine($"Login attempt: {loginModel.Email}");
+
+        // هنا رح نضيف كود المصادقة الحقيقي
+        await Task.Delay(500);
+
+        // تحويل إلى الصفحة الرئيسية
+        Navigation.NavigateTo("/");
+    }
+
+    private void ContinueAsGuest()
+    {
+        // وضع الزائر
+        Navigation.NavigateTo("/");
+    }
+
+    private void NavigateToRegister()
+    {
+        Navigation.NavigateTo("/register");
+    }
+
+    private void NavigateToForgotPassword()
+    {
+        Navigation.NavigateTo("/forgot-password");
+    }
+
+    // نموذج البيانات
+    private class LoginModel
+    {
+        public string Email { get; set; } = "";
+        public string Password { get; set; } = "";
+        public bool RememberMe { get; set; } = false;
+    }
+}

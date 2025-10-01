@@ -1,0 +1,27 @@
+﻿.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex: 1;
+    background-color: #f8f9fa;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}

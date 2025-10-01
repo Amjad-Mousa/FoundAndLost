@@ -1,0 +1,258 @@
+﻿@page "/item/{ItemId:int}"
+@inject NavigationManager Navigation
+
+<PageTitle>Lost & Found - تفاصيل الغرض</PageTitle>
+
+<div class="item-details-page">
+    <!-- زر العودة -->
+    <div class="container">
+        <button class="back-btn" @onclick="NavigateToPrevious">
+            <i class="fas fa-arrow-right"></i>
+            العودة
+        </button>
+    </div>
+
+    <!-- محتوى الصفحة -->
+    <div class="container">
+        <div class="item-content">
+            <!-- معرض الصور -->
+            <div class="item-gallery">
+                <div class="main-image">
+                    <img src="/images/placeholder.jpg" alt="@itemTitle" />
+                    <div class="image-badge @itemTypeClass">@itemTypeText</div>
+                </div>
+                <div class="image-thumbnails">
+                    <div class="thumbnail active">
+                        <img src="/images/placeholder.jpg" alt="صورة 1" />
+                    </div>
+                    <div class="thumbnail">
+                        <img src="/images/placeholder.jpg" alt="صورة 2" />
+                    </div>
+                    <div class="thumbnail">
+                        <img src="/images/placeholder.jpg" alt="صورة 3" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- معلومات الغرض -->
+            <div class="item-info">
+                <!-- العنوان والحالة -->
+                <div class="item-header">
+                    <h1 class="item-title">@itemTitle</h1>
+                    <div class="item-status @itemStatusClass">@itemStatusText</div>
+                </div>
+
+                <!-- معلومات أساسية -->
+                <div class="basic-info">
+                    <div class="info-item">
+                        <i class="fas fa-tag"></i>
+                        <div class="info-content">
+                            <span class="info-label">التصنيف</span>
+                            <span class="info-value">@itemCategory</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <span class="info-label">الموقع</span>
+                            <span class="info-value">@itemLocation</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-calendar"></i>
+                        <div class="info-content">
+                            <span class="info-label">التاريخ</span>
+                            <span class="info-value">@itemDate</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <div class="info-content">
+                            <span class="info-label">الناشر</span>
+                            <span class="info-value">@itemUser</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الوصف -->
+                <div class="description-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-align-right"></i>
+                        الوصف
+                    </h3>
+                    <p class="item-description">@itemDescription</p>
+                </div>
+
+                <!-- معلومات إضافية -->
+                <div class="additional-info">
+                    <h3 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        معلومات إضافية
+                    </h3>
+                    <div class="info-grid">
+                        <div class="additional-item">
+                            <span class="additional-label">اللون:</span>
+                            <span class="additional-value">@itemColor</span>
+                        </div>
+                        <div class="additional-item">
+                            <span class="additional-label">الحجم:</span>
+                            <span class="additional-value">@itemSize</span>
+                        </div>
+                        <div class="additional-item">
+                            <span class="additional-label">العلامات المميزة:</span>
+                            <span class="additional-value">@itemFeatures</span>
+                        </div>
+                        <div class="additional-item">
+                            <span class="additional-label">المحتويات:</span>
+                            <span class="additional-value">@itemContents</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- خريطة الموقع -->
+                <div class="location-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-map"></i>
+                        موقع الحادث
+                    </h3>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>خريطة توضح موقع الحادث</p>
+                            <span class="map-address">@itemLocation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الاتصال -->
+                <div class="contact-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-phone"></i>
+                        التواصل مع الناشر
+                    </h3>
+                    <div class="contact-options">
+                        <button class="contact-btn email-btn">
+                            <i class="fas fa-envelope"></i>
+                            إرسال بريد إلكتروني
+                        </button>
+                        <button class="contact-btn phone-btn">
+                            <i class="fas fa-phone"></i>
+                            عرض رقم الهاتف
+                        </button>
+                        <button class="contact-btn chat-btn">
+                            <i class="fas fa-comments"></i>
+                            بدء محادثة
+                        </button>
+                    </div>
+
+                    <!-- معلومات الاتصال (تظهر بعد النقر) -->
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>ahmed@example.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+966 55 123 4567</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- أزرار الإجراء -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary report-btn">
+                        <i class="fas fa-flag"></i>
+                        الإبلاغ عن مشكلة
+                    </button>
+                    <button class="btn btn-secondary share-btn">
+                        <i class="fas fa-share"></i>
+                        مشاركة
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- بلاغات مشابهة -->
+        <section class="similar-items">
+            <h2 class="section-title">بلاغات مشابهة</h2>
+            <div class="similar-grid">
+                <Card 
+                    Title="هاتف سامسونج"
+                    Description="هاتف سامسونج أسود مفقود في نفس المنطقة"
+                    Category="هاتف"
+                    Location="مركز المدينة"
+                    Date="2024-01-14"
+                    Type="lost"
+                    Status="active"
+                    OnClick="() => ViewSimilarItem(1)" />
+
+                <Card 
+                    Title="محفظة جلدية"
+                    Description="محفظة جلدية بنية تحتوي على مستندات"
+                    Category="محفظة"
+                    Location="المجمع التجاري"
+                    Date="2024-01-13"
+                    Type="found"
+                    Status="active"
+                    OnClick="() => ViewSimilarItem(2)" />
+
+                <Card 
+                    Title="سماعات لاسلكية"
+                    Description="سماعات ايربودس بيضاء"
+                    Category="إلكترونيات"
+                    Location="الجامعة"
+                    Date="2024-01-12"
+                    Type="lost"
+                    Status="active"
+                    OnClick="() => ViewSimilarItem(3)" />
+            </div>
+        </section>
+    </div>
+</div>
+
+@code {
+    [Parameter] public int ItemId { get; set; }
+
+    // بيانات وهمية للعرض
+    private string itemTitle = "هاتف آيفون 13";
+    private string itemDescription = "هاتف آيفون 13 أسود بحالة جيدة، مفقود في منطقة مركز المدينة. يحتوي على غطاء شفاف وشارجر أصلي. يوجد خدش بسيط في الزاوية اليمنى العلوية.";
+    private string itemCategory = "هاتف";
+    private string itemLocation = "مركز المدينة - الطابق الثالث";
+    private string itemDate = "2024-01-15";
+    private string itemUser = "أحمد محمد";
+    private string itemType = "lost";
+    private string itemStatus = "active";
+    private string itemColor = "أسود";
+    private string itemSize = "وسط";
+    private string itemFeatures = "خدش بسيط في الزاوية، غطاء شفاف";
+    private string itemContents = "الهاتف فقط بدون إكسسوارات";
+
+    private string itemTypeClass => itemType == "found" ? "found" : "lost";
+    private string itemTypeText => itemType == "found" ? "عُثر عليه" : "مفقود";
+    private string itemStatusClass => itemStatus == "resolved" ? "resolved" : "active";
+    private string itemStatusText => itemStatus == "resolved" ? "تم الاستلام" : "نشط";
+
+    protected override void OnInitialized()
+    {
+        // هنا رح نضيف كود جلب البيانات من الخدمات
+        LoadItemData();
+    }
+
+    private void LoadItemData()
+    {
+        // بيانات وهمية - رح تستبدل بطلب API
+        Console.WriteLine($"جلب بيانات الغرض رقم: {ItemId}");
+    }
+
+    private void NavigateToPrevious()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+    private void ViewSimilarItem(int itemId)
+    {
+        Navigation.NavigateTo($"/item/{itemId}");
+    }
+}

@@ -1,0 +1,236 @@
+﻿@page "/search"
+@inject NavigationManager Navigation
+
+<PageTitle>Lost & Found - البحث</PageTitle>
+
+<div class="search-page">
+    <!-- هيدر البحث -->
+    <section class="search-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">البحث في البلاغات</h1>
+                <p class="page-subtitle">ابحث عن الأغراض المفقودة أو التي عُثر عليها</p>
+
+                <!-- شريط البحث الرئيسي -->
+                <div class="main-search">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="search-input" placeholder="اكتب ما تبحث عنه..." />
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                            بحث
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- محتوى الصفحة -->
+    <section class="search-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- الشريط الجانبي للفلترة -->
+                <aside class="filters-sidebar">
+                    <div class="filters-card">
+                        <h3 class="filters-title">
+                            <i class="fas fa-filter"></i>
+                            تصفية النتائج
+                        </h3>
+
+                        <!-- تصفية حسب النوع -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">نوع البلاغ</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" checked />
+                                    <span class="checkmark"></span>
+                                    جميع الأنواع
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    <i class="fas fa-search lost-icon"></i>
+                                    مفقود
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    <i class="fas fa-check found-icon"></i>
+                                    عُثر عليه
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- تصفية حسب التصنيف -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">التصنيف</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    📱 هواتف
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    👛 محافظ
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    🔑 مفاتيح
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    📄 مستندات
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    🎧 إلكترونيات
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    🎒 حقائب
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- تصفية حسب الموقع -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">الموقع</h4>
+                            <select class="location-select">
+                                <option value="">جميع المواقع</option>
+                                <option value="city-center">مركز المدينة</option>
+                                <option value="mall">المجمع التجاري</option>
+                                <option value="university">الجامعة</option>
+                                <option value="park">الحديقة</option>
+                                <option value="beach">الشاطئ</option>
+                            </select>
+                        </div>
+
+                        <!-- تصفية حسب التاريخ -->
+                        <div class="filter-group">
+                            <h4 class="filter-label">الفترة الزمنية</h4>
+                            <select class="date-select">
+                                <option value="">أي وقت</option>
+                                <option value="today">اليوم</option>
+                                <option value="week">أخر أسبوع</option>
+                                <option value="month">أخر شهر</option>
+                                <option value="3months">أخر 3 أشهر</option>
+                            </select>
+                        </div>
+
+                        <!-- أزرار التصفية -->
+                        <div class="filter-actions">
+                            <button class="btn btn-primary apply-btn">
+                                تطبيق التصفية
+                            </button>
+                            <button class="btn btn-outline reset-btn">
+                                إعادة تعيين
+                            </button>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- نتائج البحث -->
+                <main class="results-section">
+                    <!-- معلومات النتائج -->
+                    <div class="results-header">
+                        <div class="results-info">
+                            <h3>نتائج البحث</h3>
+                            <span class="results-count">(12 بلاغ)</span>
+                        </div>
+                        <div class="sort-options">
+                            <select class="sort-select">
+                                <option value="newest">الأحدث أولاً</option>
+                                <option value="oldest">الأقدم أولاً</option>
+                                <option value="relevance">الأكثر صلة</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- شبكة النتائج -->
+                    <div class="results-grid">
+                        <!-- سيتم عرض الكروت هنا -->
+                        <Card Title="هاتف سامسونج"
+                              Description="هاتف سامسونج أسود بشاشة مكسورة من الزاوية"
+                              Category="هاتف"
+                              Location="الجامعة - مبنى الهندسة"
+                              Date="2024-01-16"
+                              Type="lost"
+                              Status="active"
+                              OnClick="() => ViewItemDetails(5)" />
+
+                        <Card Title="محفظة بنية"
+                              Description="محفظة جلدية بنية تحتوي على بطاقة هوية"
+                              Category="محفظة"
+                              Location="المجمع التجاري - الطابق الثاني"
+                              Date="2024-01-15"
+                              Type="found"
+                              Status="active"
+                              OnClick="() => ViewItemDetails(6)" />
+
+                        <Card Title="سماعات لاسلكية"
+                              Description="سماعات ايربودس بيضاء بشاحنها"
+                              Category="إلكترونيات"
+                              Location="مقهى الإنترنت"
+                              Date="2024-01-14"
+                              Type="found"
+                              Status="active"
+                              OnClick="() => ViewItemDetails(7)" />
+
+                        <Card Title="حقيبة ظهر"
+                              Description="حقيبة ظهر سوداء تحتوي على كتب ودفاتر"
+                              Category="حقائب"
+                              Location="محطة الباص"
+                              Date="2024-01-13"
+                              Type="lost"
+                              Status="active"
+                              OnClick="() => ViewItemDetails(8)" />
+
+                        <Card Title="نظارة شمسية"
+                              Description="نظارة شمسية سوداء ماركة راي بان"
+                              Category="إكسسوارات"
+                              Location="الشاطئ العام"
+                              Date="2024-01-12"
+                              Type="lost"
+                              Status="active"
+                              OnClick="() => ViewItemDetails(9)" />
+
+                        <Card Title="ساعة ذكية"
+                              Description="ساعة أبل ووتch سوداء"
+                              Category="إلكترونيات"
+                              Location="النادي الرياضي"
+                              Date="2024-01-11"
+                              Type="found"
+                              Status="active"
+                              OnClick="() => ViewItemDetails(10)" />
+                    </div>
+
+                    <!-- ترقيم الصفحات -->
+                    <div class="pagination">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span class="page-dots">...</span>
+                        <button class="page-btn">10</button>
+                        <button class="page-btn next">
+                            التالي <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+</div>
+
+@code {
+    private void ViewItemDetails(int itemId)
+    {
+        Navigation.NavigateTo($"/item/{itemId}");
+    }
+}

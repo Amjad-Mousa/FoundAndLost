@@ -1,0 +1,451 @@
+.profile-page[b-2u882w6qcg] {
+    direction: rtl;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* هيدر الصفحة */
+.profile-header[b-2u882w6qcg] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem 0;
+}
+
+.header-content[b-2u882w6qcg] {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.page-title[b-2u882w6qcg] {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.page-subtitle[b-2u882w6qcg] {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* محتوى الصفحة */
+.profile-content[b-2u882w6qcg] {
+    padding: 2rem 0;
+}
+
+.container[b-2u882w6qcg] {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.content-grid[b-2u882w6qcg] {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* الشريط الجانبي */
+.profile-sidebar[b-2u882w6qcg] {
+    position: sticky;
+    top: 2rem;
+}
+
+.user-card[b-2u882w6qcg] {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.user-avatar[b-2u882w6qcg] {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 4px solid #667eea;
+}
+
+    .user-avatar img[b-2u882w6qcg] {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.user-info h3[b-2u882w6qcg] {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.user-email[b-2u882w6qcg] {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.user-badge[b-2u882w6qcg] {
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+    .user-badge.user-role[b-2u882w6qcg] {
+        background: #e6f7ff;
+        color: #007bff;
+    }
+
+    .user-badge.admin-role[b-2u882w6qcg] {
+        background: #fff0e6;
+        color: #ff6b35;
+    }
+
+/* التنقل الجانبي */
+.profile-nav[b-2u882w6qcg] {
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.nav-item[b-2u882w6qcg] {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: right;
+}
+
+    .nav-item:hover[b-2u882w6qcg] {
+        background: #f8f9fa;
+        color: #667eea;
+    }
+
+    .nav-item.active[b-2u882w6qcg] {
+        background: #667eea;
+        color: white;
+    }
+
+    .nav-item i[b-2u882w6qcg] {
+        width: 20px;
+        font-size: 1.1rem;
+    }
+
+/* المحتوى الرئيسي */
+.profile-main[b-2u882w6qcg] {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* الإحصائيات */
+.stats-cards[b-2u882w6qcg] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card[b-2u882w6qcg] {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s;
+}
+
+    .stat-card:hover[b-2u882w6qcg] {
+        transform: translateY(-5px);
+    }
+
+.stat-icon[b-2u882w6qcg] {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #667eea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.stat-content[b-2u882w6qcg] {
+    flex: 1;
+}
+
+.stat-number[b-2u882w6qcg] {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label[b-2u882w6qcg] {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* تبويبات البلاغات */
+.reports-tabs[b-2u882w6qcg] {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #f8f9fa;
+    padding-bottom: 1rem;
+}
+
+.tab-btn[b-2u882w6qcg] {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: #666;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+    .tab-btn.active[b-2u882w6qcg] {
+        background: #667eea;
+        color: white;
+    }
+
+    .tab-btn:hover:not(.active)[b-2u882w6qcg] {
+        background: #f8f9fa;
+        color: #667eea;
+    }
+
+/* قائمة البلاغات */
+.user-reports[b-2u882w6qcg] {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.report-item[b-2u882w6qcg] {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s;
+}
+
+    .report-item:hover[b-2u882w6qcg] {
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+.report-header[b-2u882w6qcg] {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.report-title[b-2u882w6qcg] {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.report-meta[b-2u882w6qcg] {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.report-type[b-2u882w6qcg],
+.report-status[b-2u882w6qcg] {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+    .report-type.lost[b-2u882w6qcg] {
+        background: #ffe6e6;
+        color: #dc3545;
+    }
+
+    .report-type.found[b-2u882w6qcg] {
+        background: #e6f7ff;
+        color: #007bff;
+    }
+
+    .report-status.active[b-2u882w6qcg] {
+        background: #e6f7e6;
+        color: #28a745;
+    }
+
+    .report-status.resolved[b-2u882w6qcg] {
+        background: #f0f0f0;
+        color: #6c757d;
+    }
+
+.report-date[b-2u882w6qcg] {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.report-actions[b-2u882w6qcg] {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.btn[b-2u882w6qcg] {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.btn-sm[b-2u882w6qcg] {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+.btn-outline[b-2u882w6qcg] {
+    background: transparent;
+    color: #667eea;
+    border: 1px solid #667eea;
+}
+
+    .btn-outline:hover[b-2u882w6qcg] {
+        background: #667eea;
+        color: white;
+    }
+
+.btn-primary[b-2u882w6qcg] {
+    background: #667eea;
+    color: white;
+    border: 1px solid #667eea;
+}
+
+    .btn-primary:hover[b-2u882w6qcg] {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+    }
+
+.btn-danger[b-2u882w6qcg] {
+    background: transparent;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+    .btn-danger:hover[b-2u882w6qcg] {
+        background: #dc3545;
+        color: white;
+    }
+
+/* لا توجد بلاغات */
+.no-reports[b-2u882w6qcg] {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+}
+
+    .no-reports i[b-2u882w6qcg] {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        color: #ccc;
+    }
+
+    .no-reports h3[b-2u882w6qcg] {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .no-reports p[b-2u882w6qcg] {
+        margin-bottom: 2rem;
+    }
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 1024px) {
+    .content-grid[b-2u882w6qcg] {
+        grid-template-columns: 250px 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-grid[b-2u882w6qcg] {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-sidebar[b-2u882w6qcg] {
+        position: static;
+    }
+
+    .stats-cards[b-2u882w6qcg] {
+        grid-template-columns: 1fr;
+    }
+
+    .report-header[b-2u882w6qcg] {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .report-meta[b-2u882w6qcg] {
+        justify-content: flex-start;
+    }
+
+    .reports-tabs[b-2u882w6qcg] {
+        flex-direction: column;
+    }
+
+    .tab-btn[b-2u882w6qcg] {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title[b-2u882w6qcg] {
+        font-size: 2rem;
+    }
+
+    .profile-main[b-2u882w6qcg] {
+        padding: 1.5rem;
+    }
+
+    .user-card[b-2u882w6qcg] {
+        padding: 1.5rem;
+    }
+
+    .report-actions[b-2u882w6qcg] {
+        flex-direction: column;
+    }
+
+    .btn[b-2u882w6qcg] {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,270 @@
+﻿@page "/report"
+@inject NavigationManager Navigation
+
+<PageTitle>Lost & Found - إبلاغ جديد</PageTitle>
+
+<div class="report-page">
+    <!-- هيدر الصفحة -->
+    <section class="report-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">إبلاغ عن غرض جديد</h1>
+                <p class="page-subtitle">ساعد الآخرين في العثور على أغراضهم أو اعلن عن غرض وجدته</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- نموذج الإبلاغ -->
+    <section class="report-form-section">
+        <div class="container">
+            <div class="form-container">
+                <!-- خطوات النموذج -->
+                <div class="form-steps">
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <div class="step-title">نوع البلاغ</div>
+                            <div class="step-desc">اختر نوع الإبلاغ</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-info">
+                            <div class="step-title">معلومات الغرض</div>
+                            <div class="step-desc">أدخل التفاصيل</div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-info">
+                            <div class="step-title">الموقع والصور</div>
+                            <div class="step-desc">حدد الموقع</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- نموذج الإبلاغ -->
+                <div class="form-content">
+                    <!-- نوع البلاغ -->
+                    <div class="form-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-question-circle"></i>
+                            نوع البلاغ
+                        </h3>
+                        <div class="report-type-cards">
+                            <div class="type-card active">
+                                <div class="type-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="type-content">
+                                    <h4>غرض مفقود</h4>
+                                    <p>فقدت غرضاً وتريد المساعدة في العثور عليه</p>
+                                </div>
+                            </div>
+                            <div class="type-card">
+                                <div class="type-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="type-content">
+                                    <h4>غرض موجود</h4>
+                                    <p>عثرت على غرض وتريد إرجاعه لصاحبه</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- معلومات الغرض -->
+                    <div class="form-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-info-circle"></i>
+                            معلومات الغرض
+                        </h3>
+
+                        <div class="form-grid">
+                            <!-- اسم الغرض -->
+                            <div class="form-group">
+                                <label class="form-label">اسم الغرض *</label>
+                                <input type="text" class="form-input" placeholder="مثال: هاتف آيفون، محفظة سوداء..." />
+                                <span class="form-hint">أدخل اسم واضح للغرض</span>
+                            </div>
+
+                            <!-- تصنيف الغرض -->
+                            <div class="form-group">
+                                <label class="form-label">التصنيف *</label>
+                                <select class="form-select">
+                                    <option value="">اختر التصنيف</option>
+                                    <option value="phone">📱 هاتف</option>
+                                    <option value="wallet">👛 محفظة</option>
+                                    <option value="keys">🔑 مفاتيح</option>
+                                    <option value="documents">📄 مستندات</option>
+                                    <option value="electronics">🎧 إلكترونيات</option>
+                                    <option value="bag">🎒 حقيبة</option>
+                                    <option value="clothes">👕 ملابس</option>
+                                    <option value="jewelry">💍 مجوهرات</option>
+                                    <option value="other">📦 أخرى</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- وصف الغرض -->
+                        <div class="form-group">
+                            <label class="form-label">وصف الغرض *</label>
+                            <textarea class="form-textarea" rows="4" placeholder="صف الغرض بالتفصيل...
+مثال:
+- اللون
+- الحجم
+- العلامات المميزة
+- المحتويات"></textarea>
+                            <span class="form-hint">أدخل وصفاً مفصلاً لمساعدة الآخرين في التعرف على الغرض</span>
+                        </div>
+
+                        <!-- القيمة التقريبية -->
+                        <div class="form-group">
+                            <label class="form-label">القيمة التقريبية</label>
+                            <div class="value-input-group">
+                                <input type="number" class="form-input" placeholder="0" />
+                                <select class="currency-select">
+                                    <option value="USD">$</option>
+                                    <option value="EUR">€</option>
+                                    <option value="GBP">£</option>
+                                    <option value="SAR" selected>ر.س</option>
+                                    <option value="AED">د.إ</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الموقع والوقت -->
+                    <div class="form-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-map-marker-alt"></i>
+                            الموقع والوقت
+                        </h3>
+
+                        <div class="form-grid">
+                            <!-- الموقع -->
+                            <div class="form-group">
+                                <label class="form-label">موقع الحادث *</label>
+                                <input type="text" class="form-input" placeholder="أدخل العنوان أو اسم المكان..." />
+                                <span class="form-hint">مثال: مركز المدينة، المجمع التجاري، الجامعة</span>
+                            </div>
+
+                            <!-- التاريخ -->
+                            <div class="form-group">
+                                <label class="form-label">تاريخ الحادث *</label>
+                                <input type="date" class="form-input" />
+                            </div>
+                        </div>
+
+                        <!-- الوقت -->
+                        <div class="form-group">
+                            <label class="form-label">الوقت التقريبي</label>
+                            <input type="time" class="form-input" />
+                        </div>
+
+                        <!-- خريطة -->
+                        <div class="form-group">
+                            <label class="form-label">حدد الموقع على الخريطة</label>
+                            <div class="map-placeholder">
+                                <i class="fas fa-map"></i>
+                                <p>خريطة تحديد الموقع</p>
+                                <span class="map-hint">(سيتم إضافتها لاحقاً)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الصور -->
+                    <div class="form-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-camera"></i>
+                            صور الغرض
+                        </h3>
+
+                        <div class="upload-section">
+                            <div class="upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h4>اسحب وأفلت الصور هنا</h4>
+                                <p>أو <span class="browse-link">اختر من الجهاز</span></p>
+                                <span class="upload-hint">الحد الأقصى 5 صور - PNG, JPG</span>
+                            </div>
+
+                            <!-- معاينة الصور -->
+                            <div class="image-previews">
+                                <div class="image-preview">
+                                    <img src="/images/placeholder.jpg" alt="معاينة" />
+                                    <button class="remove-image">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="image-preview add-more">
+                                    <i class="fas fa-plus"></i>
+                                    <span>إضافة صورة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- معلومات الاتصال -->
+                    <div class="form-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-phone"></i>
+                            معلومات الاتصال
+                        </h3>
+
+                        <div class="form-grid">
+                            <!-- طريقة الاتصال -->
+                            <div class="form-group">
+                                <label class="form-label">طريقة الاتصال المفضلة *</label>
+                                <div class="contact-options">
+                                    <label class="contact-option">
+                                        <input type="radio" name="contact" checked />
+                                        <span class="radio-checkmark"></span>
+                                        <i class="fas fa-envelope"></i>
+                                        البريد الإلكتروني
+                                    </label>
+                                    <label class="contact-option">
+                                        <input type="radio" name="contact" />
+                                        <span class="radio-checkmark"></span>
+                                        <i class="fas fa-phone"></i>
+                                        رقم الهاتف
+                                    </label>
+                                    <label class="contact-option">
+                                        <input type="radio" name="contact" />
+                                        <span class="radio-checkmark"></span>
+                                        <i class="fas fa-comments"></i>
+                                        الدردشة داخل الموقع
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- معلومات إضافية -->
+                            <div class="form-group">
+                                <label class="form-label">معلومات إضافية</label>
+                                <textarea class="form-textarea" rows="3" placeholder="أي معلومات إضافية تريد مشاركتها..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- أزرار الإجراء -->
+                    <div class="form-actions">
+                        <button class="btn btn-secondary" @onclick="NavigateToHome">
+                            <i class="fas fa-arrow-right"></i>
+                            إلغاء
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            نشر البلاغ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@code {
+    private void NavigateToHome()
+    {
+        Navigation.NavigateTo("/");
+    }
+}

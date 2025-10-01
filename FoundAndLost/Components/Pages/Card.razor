@@ -1,0 +1,50 @@
+﻿<div class="item-card" @onclick="HandleClick">
+    <div class="card-header">
+        <span class="item-type @TypeClass">@TypeText</span>
+        <span class="item-status @StatusClass">@StatusText</span>
+    </div>
+    <div class="card-image">
+        <img src="@ImageUrl" alt="@Title" />
+    </div>
+    <div class="card-body">
+        <h3 class="item-title">@Title</h3>
+        <div class="item-meta">
+            <span class="meta-item">
+                <i class="fas fa-tag"></i>
+                @Category
+            </span>
+            <span class="meta-item">
+                <i class="fas fa-map-marker-alt"></i>
+                @Location
+            </span>
+            <span class="meta-item">
+                <i class="fas fa-calendar"></i>
+                @Date
+            </span>
+        </div>
+        <p class="item-description">@Description</p>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Title { get; set; } = "عنوان غير معروف";
+    [Parameter] public string Description { get; set; } = "لا يوجد وصف";
+    [Parameter] public string Category { get; set; } = "عام";
+    [Parameter] public string Location { get; set; } = "موقع غير معروف";
+    [Parameter] public string Date { get; set; } = DateTime.Now.ToString("yyyy-MM-dd");
+    [Parameter] public string ImageUrl { get; set; } = "/images/placeholder.jpg";
+    [Parameter] public string Type { get; set; } = "lost"; // lost or found
+    [Parameter] public string Status { get; set; } = "active"; // active, resolved
+    [Parameter] public EventCallback OnClick { get; set; }
+
+    private string TypeClass => Type.ToLower() == "found" ? "found" : "lost";
+    private string StatusClass => Status.ToLower() == "resolved" ? "resolved" : "active";
+
+    private string TypeText => Type.ToLower() == "found" ? "عُثر عليه" : "مفقود";
+    private string StatusText => Status.ToLower() == "resolved" ? "تم الاستلام" : "نشط";
+
+    private void HandleClick()
+    {
+        OnClick.InvokeAsync();
+    }
+}

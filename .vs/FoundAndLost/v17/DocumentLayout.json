@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\myprofile\\foundandlost\\foundandlost\\components\\pages\\auth\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\auth\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\myprofile\\foundandlost\\foundandlost\\components\\pages\\auth\\login.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\auth\\login.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\myprofile\\foundandlost\\foundandlost\\components\\pages\\auth\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\auth\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\myprofile\\foundandlost\\foundandlost\\components\\pages\\auth\\register.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\auth\\register.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\myprofile\\foundandlost\\foundandlost\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\myprofile\\foundandlost\\foundandlost\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\myprofile\\foundandlost\\foundandlost\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\myprofile\\foundandlost\\foundandlost\\components\\pages\\item.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\item.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "FoundAndLost\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-01T08:19:06.651Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Register.razor.css",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Register.razor.css",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Auth\\Register.razor.css",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Register.razor.css",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Auth\\Register.razor.css",
+              "ViewState": "AgIAAL8BAAAAAAAAAAAgwN4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-01T08:36:30.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Register.razor",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Auth\\Register.razor",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Register.razor",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Auth\\Register.razor",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAewGgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-01T08:32:10.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.razor.css",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Login.razor.css",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Auth\\Login.razor.css",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Login.razor.css",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Auth\\Login.razor.css",
+              "ViewState": "AgIAAEYBAAAAAAAAAAAIwGsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-01T08:24:33.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Login.razor",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Auth\\Login.razor",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Login.razor",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Auth\\Login.razor",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAewIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-01T08:21:48.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Home.razor.css",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Home.razor.css",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Home.razor.css",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Home.razor.css",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Home.razor.css",
+              "ViewState": "AgIAAOwBAAAAAAAAAAAuwAICAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-01T07:52:21.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Item.razor.css",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Item.razor.css",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Item.razor.css",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Item.razor.css",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Item.razor.css",
+              "ViewState": "AgIAALkBAAAAAAAAAAAuwM8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-01T07:44:51.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "FoundAndLost\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-01T07:30:50.537Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
