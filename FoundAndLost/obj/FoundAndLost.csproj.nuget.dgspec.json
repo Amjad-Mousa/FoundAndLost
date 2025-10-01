@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\FoundAndLost.csproj": {}
+    "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\FoundAndLost.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\FoundAndLost.csproj": {
+    "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\FoundAndLost.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\FoundAndLost.csproj",
+        "projectUniqueName": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\FoundAndLost.csproj",
         "projectName": "FoundAndLost",
-        "projectPath": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\FoundAndLost.csproj",
+        "projectPath": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\FoundAndLost.csproj",
         "packagesPath": "C:\\Users\\AmjadPc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AmjadPc\\source\\repos\\MyProfile\\FoundAndLost\\FoundAndLost\\obj\\",
+        "outputPath": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
