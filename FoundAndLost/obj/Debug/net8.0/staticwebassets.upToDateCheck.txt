@@ -2,3 +2,7 @@ wwwroot\app.css
 wwwroot\bootstrap\bootstrap.min.css
 wwwroot\bootstrap\bootstrap.min.css.map
 wwwroot\favicon.png
+wwwroot\images\black.png
+wwwroot\images\ep.jpg
+wwwroot\images\iphone.jpg
+wwwroot\images\key.jpg
