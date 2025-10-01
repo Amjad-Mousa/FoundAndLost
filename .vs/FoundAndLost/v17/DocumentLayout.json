@@ -3,40 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\auth\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\auth\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\auth\\login.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\auth\\login.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\auth\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\auth\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\auth\\register.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\auth\\register.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\admin.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\admin.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\admin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\admin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\item.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\item.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\foundandlost\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{97C822A1-C76D-4BED-BD3C-A1462E71BE4D}|FoundAndLost\\FoundAndLost.csproj|solutionrelative:foundandlost\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC7DB505-71A8-4304-844A-72803A9F2039}|LostAndFoundAPI\\LostAndFoundAPI.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\lostandfoundapi\\services\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC7DB505-71A8-4304-844A-72803A9F2039}|LostAndFoundAPI\\LostAndFoundAPI.csproj|solutionrelative:lostandfoundapi\\services\\mongodbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC7DB505-71A8-4304-844A-72803A9F2039}|LostAndFoundAPI\\LostAndFoundAPI.csproj|c:\\users\\amjadpc\\source\\repos\\foundandlost\\lostandfoundapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC7DB505-71A8-4304-844A-72803A9F2039}|LostAndFoundAPI\\LostAndFoundAPI.csproj|solutionrelative:lostandfoundapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,125 +37,85 @@
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "FoundAndLost\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAA8AAAAAAAAAAIBJwCAAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-01T08:19:06.651Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": ".env",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\.env",
-              "RelativeDocumentMoniker": "FoundAndLost\\.env",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\.env",
-              "RelativeToolTip": "FoundAndLost\\.env",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-01T10:03:48.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Register.razor.css",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Register.razor.css",
-              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Auth\\Register.razor.css",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Register.razor.css",
-              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Auth\\Register.razor.css",
-              "ViewState": "AgIAAL8BAAAAAAAAAAAgwN4BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-01T08:36:30.41Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Register.razor",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Register.razor",
-              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Auth\\Register.razor",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Register.razor",
-              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Auth\\Register.razor",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAewGgAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "FoundAndLost\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAEwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-01T08:32:10.111Z",
+              "WhenOpened": "2025-10-01T11:45:52.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Admin.razor.css",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Admin.razor.css",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Admin.razor.css",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Admin.razor.css*",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Admin.razor.css*",
+              "ViewState": "AgIAAIgCAAAAAAAAAAAAAKMCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-01T11:33:02.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Login.razor.css",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Login.razor.css",
-              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Auth\\Login.razor.css",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Login.razor.css",
-              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Auth\\Login.razor.css",
-              "ViewState": "AgIAAEYBAAAAAAAAAAAIwGsBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-01T08:24:33.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.razor",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Login.razor",
-              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Auth\\Login.razor",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Auth\\Login.razor",
-              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Auth\\Login.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgAAAAAAAAAAAAAAA==",
+              "Title": "Admin.razor",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Admin.razor",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Admin.razor",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Admin.razor",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Admin.razor",
+              "ViewState": "AgIAAKYCAAAAAAAAAAAIwLoCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-01T08:21:48.663Z",
+              "WhenOpened": "2025-10-01T10:37:47.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Home.razor.css",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Home.razor.css",
-              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Home.razor.css",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Home.razor.css",
-              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Home.razor.css",
-              "ViewState": "AgIAAOwBAAAAAAAAAAAuwAICAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-01T07:52:21.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Item.razor.css",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Item.razor.css",
-              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Item.razor.css",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Item.razor.css",
-              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Item.razor.css",
-              "ViewState": "AgIAALkBAAAAAAAAAAAuwM8BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-01T07:44:51.479Z",
+              "DocumentIndex": 3,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "FoundAndLost\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAIwBUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-01T10:31:15.939Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "FoundAndLost\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\FoundAndLost\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "FoundAndLost\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-01T07:30:50.537Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\LostAndFoundAPI\\Program.cs",
+              "RelativeDocumentMoniker": "LostAndFoundAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\LostAndFoundAPI\\Program.cs",
+              "RelativeToolTip": "LostAndFoundAPI\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAwBgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T10:23:47.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MongoDBService.cs",
+              "DocumentMoniker": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\LostAndFoundAPI\\Services\\MongoDBService.cs",
+              "RelativeDocumentMoniker": "LostAndFoundAPI\\Services\\MongoDBService.cs",
+              "ToolTip": "C:\\Users\\AmjadPc\\source\\repos\\FoundAndLost\\LostAndFoundAPI\\Services\\MongoDBService.cs",
+              "RelativeToolTip": "LostAndFoundAPI\\Services\\MongoDBService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T10:23:14.298Z",
               "EditorCaption": ""
             }
           ]

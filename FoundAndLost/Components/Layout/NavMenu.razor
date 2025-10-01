@@ -1,34 +1,57 @@
-﻿<nav class="navbar">
+﻿@inject NavigationManager Navigation
+
+<nav class="navbar">
     <div class="nav-container">
-        <!-- اللوجو والبراند -->
         <div class="nav-brand">
-            <a href="/" class="logo">
+            <a href="@GetHomeHref()" class="logo">
                 <i class="fas fa-search-location"></i>
                 <span>Lost & Found</span>
             </a>
         </div>
 
-        <!-- روابط التنقل -->
-        <div class="nav-links">
-            <a href="/" class="nav-link">
-                <i class="fas fa-home"></i>
-                الرئيسية
-            </a>
-            <a href="/report" class="nav-link">
-                <i class="fas fa-plus-circle"></i>
-                إبلاغ جديد
-            </a>
-            <a href="/search" class="nav-link">
-                <i class="fas fa-search"></i>
-                بحث
-            </a>
-            <a href="/profile" class="nav-link">
-                <i class="fas fa-user"></i>
-                الملف الشخصي
-            </a>
-        </div>
+        @if (IsAdmin)
+        {
+            <div class="nav-links admin-nav">
+                <a href="/admin" class="nav-link active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    لوحة التحكم
+                </a>
+                <a href="/admin/reports" class="nav-link">
+                    <i class="fas fa-list"></i>
+                    إدارة البلاغات
+                </a>
+                <a href="/admin/users" class="nav-link">
+                    <i class="fas fa-users-cog"></i>
+                    إدارة المستخدمين
+                </a>
+                <a href="/admin/analytics" class="nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    التقارير
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    الرئيسية
+                </a>
+                <a href="/report" class="nav-link">
+                    <i class="fas fa-plus-circle"></i>
+                    إبلاغ جديد
+                </a>
+                <a href="/search" class="nav-link">
+                    <i class="fas fa-search"></i>
+                    بحث
+                </a>
+                <a href="/profile" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    الملف الشخصي
+                </a>
+            </div>
+        }
 
-        <!-- قسم المستخدم -->
         <div class="nav-user">
             <a href="/login" class="login-btn">
                 <i class="fas fa-sign-in-alt"></i>
@@ -39,3 +62,16 @@
 </nav>
 
 <link href="css/NavMenu.css" rel="stylesheet" />
+
+@code {
+    private bool IsAdmin => Navigation.Uri.Contains("/admin");
+
+    private string GetHomeHref()
+    {
+        if (IsAdmin)
+        {
+            return "/admin"; 
+        }
+        return "/";   
+    }
+}

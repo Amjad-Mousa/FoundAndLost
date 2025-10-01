@@ -1,0 +1,699 @@
+﻿@page "/admin"
+@rendermode InteractiveServer
+@inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Lost & Found - لوحة التحكم</PageTitle>
+
+<div class="admin-page">
+    <section class="admin-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">لوحة تحكم الأدمن</h1>
+                <p class="page-subtitle">إدارة المنصة والتحكم في المحتوى والمستخدمين</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="admin-content">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon total-reports">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">@stats.TotalReports</div>
+                        <div class="stat-label">إجمالي البلاغات</div>
+                        <div class="stat-change positive">+12%</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon active-users">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">@stats.ActiveUsers</div>
+                        <div class="stat-label">مستخدم نشط</div>
+                        <div class="stat-change positive">+8%</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon resolved">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">@stats.ResolvedReports</div>
+                        <div class="stat-label">بلاغ تم حله</div>
+                        <div class="stat-change positive">+15%</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon pending">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number">@stats.PendingReports</div>
+                        <div class="stat-label">بلاغ قيد المراجعة</div>
+                        <div class="stat-change negative">-5%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="tab-btn @(activeTab == "reports" ? "active" : "")"
+                        @onclick='() => SwitchTab("reports")'>
+                    <i class="fas fa-list"></i>
+                    إدارة البلاغات
+                </button>
+                <button class="tab-btn @(activeTab == "users" ? "active" : "")"
+                        @onclick='() => SwitchTab("users")'>
+                    <i class="fas fa-users-cog"></i>
+                    إدارة المستخدمين
+                </button>
+                <button class="tab-btn @(activeTab == "analytics" ? "active" : "")"
+                        @onclick='() => SwitchTab("analytics")'>
+                    <i class="fas fa-chart-bar"></i>
+                    التقارير
+                </button>
+            </div>
+
+            <div class="tab-content">
+                <!-- تبويب إدارة البلاغات -->
+                @if (activeTab == "reports")
+                {
+                    <div class="reports-section">
+                        <div class="section-header">
+                            <h3>إدارة جميع البلاغات</h3>
+                            <div class="section-actions">
+                                <div class="search-box">
+                                    <input type="text" @bind="searchTerm" @bind:event="oninput" placeholder="ابحث في البلاغات..." />
+                                    <button class="btn btn-primary" @onclick="SearchReports">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-outline" @onclick="ExportReports">
+                                    <i class="fas fa-download"></i>
+                                    تصدير البيانات
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="reports-table">
+                            <div class="table-header">
+                                <div class="col">الغرض</div>
+                                <div class="col">النوع</div>
+                                <div class="col">المستخدم</div>
+                                <div class="col">الحالة</div>
+                                <div class="col">التاريخ</div>
+                                <div class="col">الإجراءات</div>
+                            </div>
+
+                            @if (filteredReports.Any())
+                            {
+                                @foreach (var report in filteredReports)
+                                {
+                                    <div class="table-row">
+                                        <div class="col">
+                                            <div class="item-info">
+                                                <div class="item-title">@report.Title</div>
+                                                <div class="item-category">@report.Category</div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <span class="badge @report.Type">@report.TypeText</span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="user-info">
+                                                <div class="user-name">@report.UserName</div>
+                                                <div class="user-email">@report.UserEmail</div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <span class="status-badge @report.Status">@report.StatusText</span>
+                                        </div>
+                                        <div class="col">
+                                            @report.Date
+                                        </div>
+                                        <div class="col">
+                                            <div class="action-buttons">
+                                                <button class="btn-icon view" @onclick="() => ViewReport(report.Id)" title="عرض">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                                <button class="btn-icon edit" @onclick="() => EditReport(report)" title="تعديل">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn-icon delete" @onclick="() => DeleteReport(report.Id)" title="حذف">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="no-data">
+                                    <i class="fas fa-inbox"></i>
+                                    <p>لا توجد بلاغات لعرضها</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+
+                <!-- تبويب إدارة المستخدمين -->
+                @if (activeTab == "users")
+                {
+                    <div class="users-section">
+                        <div class="section-header">
+                            <h3>إدارة المستخدمين</h3>
+                            <div class="section-actions">
+                                <div class="search-box">
+                                    <input type="text" @bind="userSearchTerm" @bind:event="oninput" placeholder="ابحث في المستخدمين..." />
+                                    <button class="btn btn-primary" @onclick="SearchUsers">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-primary" @onclick="ShowAddUserModal">
+                                    <i class="fas fa-user-plus"></i>
+                                    إضافة مستخدم
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="users-table">
+                            <div class="table-header">
+                                <div class="col">المستخدم</div>
+                                <div class="col">البريد الإلكتروني</div>
+                                <div class="col">الدور</div>
+                                <div class="col">عدد البلاغات</div>
+                                <div class="col">الحالة</div>
+                                <div class="col">الإجراءات</div>
+                            </div>
+
+                            @if (filteredUsers.Any())
+                            {
+                                @foreach (var user in filteredUsers)
+                                {
+                                    <div class="table-row">
+                                        <div class="col">
+                                            <div class="user-info">
+                                                <img src="@user.AvatarUrl" alt="@user.Name" class="user-avatar-small" />
+                                                <div>
+                                                    <div class="user-name">@user.Name</div>
+                                                    <div class="user-join-date">@user.JoinDate</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            @user.Email
+                                        </div>
+                                        <div class="col">
+                                            <span class="user-role @user.Role">@user.RoleText</span>
+                                        </div>
+                                        <div class="col">
+                                            <span class="reports-count">@user.ReportsCount</span>
+                                        </div>
+                                        <div class="col">
+                                            <span class="status-badge @(user.IsActive ? "active" : "inactive")">
+                                                @(user.IsActive ? "نشط" : "معطل")
+                                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="action-buttons">
+                                                <button class="btn-icon edit" @onclick="() => EditUser(user)" title="تعديل">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button class="btn-icon @(user.IsActive ? "disable" : "enable")"
+                                                        @onclick="() => ToggleUserStatus(user)"
+                                                        title="@(user.IsActive ? "تعطيل" : "تفعيل")">
+                                                    <i class="fas @(user.IsActive ? "fa-user-slash" : "fa-user-check")"></i>
+                                                </button>
+                                                <button class="btn-icon delete" @onclick="() => DeleteUser(user)" title="حذف">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="no-data">
+                                    <i class="fas fa-users"></i>
+                                    <p>لا توجد مستخدمين لعرضهم</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+
+                <!-- تبويب التقارير -->
+                @if (activeTab == "analytics")
+                {
+                    <div class="analytics-section">
+                        <div class="section-header">
+                            <h3>التقارير والإحصائيات</h3>
+                            <div class="section-actions">
+                                <div class="date-filter">
+                                    <select @bind="analyticsPeriod" @bind:event="onchange">
+                                        <option value="week">أخر أسبوع</option>
+                                        <option value="month">أخر شهر</option>
+                                        <option value="quarter">أخر 3 أشهر</option>
+                                        <option value="year">أخر سنة</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-outline" @onclick="GenerateReport">
+                                    <i class="fas fa-file-pdf"></i>
+                                    إنشاء تقرير
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="analytics-grid">
+                            <div class="analytics-card">
+                                <h4>البلاغات حسب النوع</h4>
+                                <div class="chart-container">
+                                    @foreach (var item in reportTypes)
+                                    {
+                                        <div class="chart-item">
+                                            <div class="chart-label">
+                                                <span class="chart-color" style="background: @item.Color"></span>
+                                                @item.Type
+                                            </div>
+                                            <div class="chart-bar">
+                                                <div class="chart-fill" style="width: @item.Percentage%; background: @item.Color"></div>
+                                            </div>
+                                            <div class="chart-value">@item.Count (@item.Percentage%)</div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="analytics-card">
+                                <h4>النشاط الشهري</h4>
+                                <div class="activity-chart">
+                                    @foreach (var month in monthlyActivity)
+                                    {
+                                        <div class="activity-item">
+                                            <div class="month">@month.Month</div>
+                                            <div class="activity-bar">
+                                                <div class="activity-fill" style="height: @month.Height%"></div>
+                                            </div>
+                                            <div class="activity-count">@month.Count</div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reports-summary">
+                            <div class="summary-card">
+                                <h4>أكثر التصنيفات</h4>
+                                <div class="category-list">
+                                    @foreach (var category in topCategories)
+                                    {
+                                        <div class="category-item">
+                                            <span class="category-name">@category.Name</span>
+                                            <div class="category-progress">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill" style="width: @category.Percentage%"></div>
+                                                </div>
+                                            </div>
+                                            <span class="category-count">@category.Count</span>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="summary-card">
+                                <h4>المستخدمين النشطين</h4>
+                                <div class="active-users-list">
+                                    @foreach (var user in topUsers)
+                                    {
+                                        <div class="active-user">
+                                            <img src="@user.AvatarUrl" alt="@user.Name" />
+                                            <div class="user-details">
+                                                <div class="user-name">@user.Name</div>
+                                                <div class="user-stats">@user.ReportsCount بلاغ</div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+</div>
+
+@if (showAddUserModal)
+{
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>إضافة مستخدم جديد</h3>
+                <button class="btn-close" @onclick="CloseAddUserModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>اسم المستخدم</label>
+                    <input type="text" @bind="newUser.Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" @bind="newUser.Email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>الدور</label>
+                    <select @bind="newUser.Role" class="form-control">
+                        <option value="user">مستخدم</option>
+                        <option value="admin">مدير</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" @onclick="CloseAddUserModal">إلغاء</button>
+                <button class="btn btn-primary" @onclick="AddNewUser">إضافة</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private string activeTab = "reports";
+    private string analyticsPeriod = "month";
+    private string searchTerm = "";
+    private string userSearchTerm = "";
+    private bool showAddUserModal = false;
+
+    private AdminStats stats = new();
+    private List<AdminReport> adminReports = new();
+    private List<AdminReport> filteredReports = new();
+    private List<AdminUser> adminUsers = new();
+    private List<AdminUser> filteredUsers = new();
+
+    // بيانات التقارير
+    private List<ReportType> reportTypes = new();
+    private List<MonthlyActivity> monthlyActivity = new();
+    private List<CategoryStats> topCategories = new();
+    private List<ActiveUser> topUsers = new();
+
+    // نموذج إضافة مستخدم جديد
+    private AdminUser newUser = new();
+
+    protected override void OnInitialized()
+    {
+        LoadAdminData();
+        LoadAnalyticsData();
+    }
+
+    private void LoadAdminData()
+    {
+        stats = new AdminStats
+            {
+                TotalReports = 1247,
+                ActiveUsers = 563,
+                ResolvedReports = 892,
+                PendingReports = 45
+            };
+
+        // بيانات البلاغات
+        adminReports = new List<AdminReport>
+        {
+            new AdminReport { Id = 1, Title = "محفظة سوداء", Category = "محفظة", Type = "lost",
+                            UserName = "أحمد محمد", UserEmail = "ahmed@example.com",
+                            Status = "active", Date = "2024-01-15" },
+            new AdminReport { Id = 2, Title = "هاتف آيفون", Category = "هاتف", Type = "found",
+                            UserName = "فاطمة علي", UserEmail = "fatima@example.com",
+                            Status = "active", Date = "2024-01-14" },
+            new AdminReport { Id = 3, Title = "مفاتيح سيارة", Category = "مفاتيح", Type = "lost",
+                            UserName = "خالد عبدالله", UserEmail = "khaled@example.com",
+                            Status = "resolved", Date = "2024-01-13" },
+            new AdminReport { Id = 4, Title = "سماعات لاسلكية", Category = "إلكترونيات", Type = "found",
+                            UserName = "سارة أحمد", UserEmail = "sara@example.com",
+                            Status = "active", Date = "2024-01-12" }
+        };
+        filteredReports = adminReports;
+
+        // بيانات المستخدمين
+        adminUsers = new List<AdminUser>
+        {
+            new AdminUser { Id = 1, Name = "أحمد محمد", Email = "ahmed@example.com",
+                          Role = "admin", IsActive = true, ReportsCount = 15,
+                          AvatarUrl = "/images/avatar1.jpg", JoinDate = "2023-05-15" },
+            new AdminUser { Id = 2, Name = "فاطمة علي", Email = "fatima@example.com",
+                          Role = "user", IsActive = true, ReportsCount = 8,
+                          AvatarUrl = "/images/avatar2.jpg", JoinDate = "2023-08-20" },
+            new AdminUser { Id = 3, Name = "خالد عبدالله", Email = "khaled@example.com",
+                          Role = "user", IsActive = false, ReportsCount = 3,
+                          AvatarUrl = "/images/avatar3.jpg", JoinDate = "2023-11-10" },
+            new AdminUser { Id = 4, Name = "سارة أحمد", Email = "sara@example.com",
+                          Role = "user", IsActive = true, ReportsCount = 12,
+                          AvatarUrl = "/images/avatar4.jpg", JoinDate = "2023-09-05" }
+        };
+        filteredUsers = adminUsers;
+    }
+
+    private void LoadAnalyticsData()
+    {
+        // بيانات أنواع البلاغات
+        reportTypes = new List<ReportType>
+        {
+            new ReportType { Type = "مفقود", Count = 856, Percentage = 68, Color = "#e74c3c" },
+            new ReportType { Type = "عثر عليه", Count = 391, Percentage = 32, Color = "#27ae60" }
+        };
+
+        // بيانات النشاط الشهري
+        monthlyActivity = new List<MonthlyActivity>
+        {
+            new MonthlyActivity { Month = "يناير", Count = 145, Height = 90 },
+            new MonthlyActivity { Month = "فبراير", Count = 132, Height = 82 },
+            new MonthlyActivity { Month = "مارس", Count = 118, Height = 74 },
+            new MonthlyActivity { Month = "أبريل", Count = 156, Height = 97 },
+            new MonthlyActivity { Month = "مايو", Count = 142, Height = 88 },
+            new MonthlyActivity { Month = "يونيو", Count = 125, Height = 78 }
+        };
+
+        // بيانات التصنيفات
+        topCategories = new List<CategoryStats>
+        {
+            new CategoryStats { Name = "هواتف", Count = 156, Percentage = 32 },
+            new CategoryStats { Name = "محافظ", Count = 89, Percentage = 18 },
+            new CategoryStats { Name = "مفاتيح", Count = 67, Percentage = 14 },
+            new CategoryStats { Name = "مستندات", Count = 54, Percentage = 11 },
+            new CategoryStats { Name = "إلكترونيات", Count = 48, Percentage = 10 }
+        };
+
+        // بيانات المستخدمين النشطين
+        topUsers = new List<ActiveUser>
+        {
+            new ActiveUser { Name = "أحمد محمد", ReportsCount = 15, AvatarUrl = "/images/avatar1.jpg" },
+            new ActiveUser { Name = "سارة أحمد", ReportsCount = 12, AvatarUrl = "/images/avatar4.jpg" },
+            new ActiveUser { Name = "فاطمة علي", ReportsCount = 8, AvatarUrl = "/images/avatar2.jpg" },
+            new ActiveUser { Name = "محمد حسن", ReportsCount = 7, AvatarUrl = "/images/avatar5.jpg" }
+        };
+    }
+
+    private void SwitchTab(string tab)
+    {
+        activeTab = tab;
+        StateHasChanged();
+    }
+
+    private void SearchReports()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredReports = adminReports;
+        }
+        else
+        {
+            filteredReports = adminReports.Where(r =>
+                r.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                r.Category.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                r.UserName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)
+            ).ToList();
+        }
+        StateHasChanged();
+    }
+
+    private void SearchUsers()
+    {
+        if (string.IsNullOrWhiteSpace(userSearchTerm))
+        {
+            filteredUsers = adminUsers;
+        }
+        else
+        {
+            filteredUsers = adminUsers.Where(u =>
+                u.Name.Contains(userSearchTerm, StringComparison.OrdinalIgnoreCase) ||
+                u.Email.Contains(userSearchTerm, StringComparison.OrdinalIgnoreCase)
+            ).ToList();
+        }
+        StateHasChanged();
+    }
+
+    private void ViewReport(int reportId)
+    {
+        Navigation.NavigateTo($"/item/{reportId}");
+    }
+
+    private void EditReport(AdminReport report)
+    {
+        // محاكاة لعملية التعديل
+        var updatedTitle = report.Title + " (معدل)";
+        report.Title = updatedTitle;
+        StateHasChanged();
+    }
+
+    private async void DeleteReport(int reportId)
+    {
+        var report = adminReports.FirstOrDefault(r => r.Id == reportId);
+        if (report != null)
+        {
+            adminReports.Remove(report);
+            filteredReports = adminReports.ToList();
+            StateHasChanged();
+
+            await JSRuntime.InvokeVoidAsync("alert", $"تم حذف البلاغ: {report.Title}");
+        }
+    }
+
+    private void ShowAddUserModal()
+    {
+        newUser = new AdminUser();
+        showAddUserModal = true;
+        StateHasChanged();
+    }
+
+    private void CloseAddUserModal()
+    {
+        showAddUserModal = false;
+        StateHasChanged();
+    }
+
+    private void AddNewUser()
+    {
+        if (!string.IsNullOrEmpty(newUser.Name) && !string.IsNullOrEmpty(newUser.Email))
+        {
+            var user = new AdminUser
+                {
+                    Id = adminUsers.Count + 1,
+                    Name = newUser.Name,
+                    Email = newUser.Email,
+                    Role = newUser.Role,
+                    IsActive = true,
+                    ReportsCount = 0,
+                    AvatarUrl = "/images/avatar-placeholder.jpg",
+                    JoinDate = DateTime.Now.ToString("yyyy-MM-dd")
+                };
+
+            adminUsers.Add(user);
+            filteredUsers = adminUsers.ToList();
+            showAddUserModal = false;
+            StateHasChanged();
+        }
+    }
+
+    private void EditUser(AdminUser user)
+    {
+        // محاكاة لعملية التعديل
+        var updatedName = user.Name + " (معدل)";
+        user.Name = updatedName;
+        StateHasChanged();
+    }
+
+    private void ToggleUserStatus(AdminUser user)
+    {
+        user.IsActive = !user.IsActive;
+        StateHasChanged();
+    }
+
+    private void DeleteUser(AdminUser user)
+    {
+        adminUsers.Remove(user);
+        filteredUsers = adminUsers.ToList();
+        StateHasChanged();
+    }
+
+    private async void GenerateReport()
+    {
+        await JSRuntime.InvokeVoidAsync("alert", "جارٍ إنشاء التقرير...");
+    }
+
+    private async void ExportReports()
+    {
+        await JSRuntime.InvokeVoidAsync("alert", "جارٍ تصدير البيانات...");
+    }
+
+    // نماذج البيانات
+    private class AdminStats
+    {
+        public int TotalReports { get; set; }
+        public int ActiveUsers { get; set; }
+        public int ResolvedReports { get; set; }
+        public int PendingReports { get; set; }
+    }
+
+    private class AdminReport
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = "";
+        public string Category { get; set; } = "";
+        public string Type { get; set; } = "lost";
+        public string UserName { get; set; } = "";
+        public string UserEmail { get; set; } = "";
+        public string Status { get; set; } = "active";
+        public string Date { get; set; } = "";
+
+        public string TypeText => Type == "found" ? "عثر عليه" : "مفقود";
+        public string StatusText => Status == "resolved" ? "تم الحل" : "نشط";
+    }
+
+    private class AdminUser
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = "";
+        public string Email { get; set; } = "";
+        public string Role { get; set; } = "user";
+        public bool IsActive { get; set; }
+        public int ReportsCount { get; set; }
+        public string AvatarUrl { get; set; } = "/images/avatar-placeholder.jpg";
+        public string JoinDate { get; set; } = "";
+
+        public string RoleText => Role == "admin" ? "مدير" : "مستخدم";
+    }
+
+    // نماذج التقارير
+    private class ReportType
+    {
+        public string Type { get; set; } = "";
+        public int Count { get; set; }
+        public int Percentage { get; set; }
+        public string Color { get; set; } = "";
+    }
+
+    private class MonthlyActivity
+    {
+        public string Month { get; set; } = "";
+        public int Count { get; set; }
+        public int Height { get; set; }
+    }
+
+    private class CategoryStats
+    {
+        public string Name { get; set; } = "";
+        public int Count { get; set; }
+        public int Percentage { get; set; }
+    }
+
+    private class ActiveUser
+    {
+        public string Name { get; set; } = "";
+        public int ReportsCount { get; set; }
+        public string AvatarUrl { get; set; } = "";
+    }
+}

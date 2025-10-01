@@ -43,8 +43,8 @@ C:\Users\AmjadPc\source\repos\MyProfile\FoundAndLost\FoundAndLost\obj\Debug\net8
 C:\Users\AmjadPc\source\repos\MyProfile\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedcss\Components\Pages\Auth\Register.razor.rz.scp.css
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\bin\Debug\net8.0\appsettings.json
-C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\bin\Debug\net8.0\FoundAndLost.staticwebassets.endpoints.json
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\bin\Debug\net8.0\FoundAndLost.staticwebassets.runtime.json
+C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\bin\Debug\net8.0\FoundAndLost.staticwebassets.endpoints.json
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\bin\Debug\net8.0\FoundAndLost.exe
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\bin\Debug\net8.0\FoundAndLost.deps.json
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\bin\Debug\net8.0\FoundAndLost.runtimeconfig.json
@@ -64,6 +64,7 @@ C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedc
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedcss\Components\Layout\Footer.razor.rz.scp.css
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
+C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedcss\Components\Pages\Admin.razor.rz.scp.css
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedcss\Components\Pages\Auth\Login.razor.rz.scp.css
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedcss\Components\Pages\Auth\Register.razor.rz.scp.css
 C:\Users\AmjadPc\source\repos\FoundAndLost\FoundAndLost\obj\Debug\net8.0\scopedcss\Components\Pages\Card.razor.rz.scp.css
