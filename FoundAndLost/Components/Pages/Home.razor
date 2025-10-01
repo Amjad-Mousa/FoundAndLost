@@ -10,29 +10,6 @@
             <div class="hero-content">
                 <h1 class="hero-title">Lost & Found</h1>
                 <p class="hero-subtitle">منصة مجانية لمساعدة الناس في العثور على أغراضهم المفقودة</p>
-
-                <!-- شريط البحث -->
-                <div class="search-container">
-                    <div class="search-box">
-                        <input type="text" class="search-input" placeholder="ابحث عن هاتف، محفظة، مفاتيح..." />
-                        <button class="search-btn" @onclick="NavigateToSearch">
-                            <i class="fas fa-search"></i>
-                            بحث
-                        </button>
-                    </div>
-                </div>
-
-                <!-- أزرار الإجراءات -->
-                <div class="action-buttons">
-                    <button class="btn btn-primary" @onclick="NavigateToReport">
-                        <i class="fas fa-plus-circle"></i>
-                        أضف بلاغ جديد
-                    </button>
-                    <button class="btn btn-secondary" @onclick="NavigateToSearch">
-                        <i class="fas fa-list"></i>
-                        تصفح البلاغات
-                    </button>
-                </div>
             </div>
         </div>
     </section>
@@ -229,24 +206,13 @@
             filteredItems = allItems.Where(item => item.Type == "found").ToList();
         }
 
-        UpdateActiveFilterButtons();
         StateHasChanged();
-    }
-
-    private void UpdateActiveFilterButtons()
-    {
-        // هذا رح نضيفه بالـ JavaScript أو CSS classes
     }
 
     private void CalculateStats()
     {
         totalItems = allItems.Count;
         resolvedItems = allItems.Count(item => item.Status == "resolved");
-    }
-
-    private void NavigateToReport()
-    {
-        Navigation.NavigateTo("/report");
     }
 
     private void NavigateToSearch()
